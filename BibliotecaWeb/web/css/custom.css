@@ -1,0 +1,21 @@
+.no-width-padding{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.no-height-padding{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.no-height-margin{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.bordes{
+    border: 1px;
+    border-style: solid;
+    border-color: red;
+}
+
