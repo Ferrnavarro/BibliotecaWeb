@@ -63,7 +63,7 @@
                                 <c:set var = "tipo" value = "danger"/>
                             </c:if>
                             <c:if test="${existe}">
-                                <c:set var = "eliDoc" value = "${documento.eliminar}"/>
+                                <c:set var = "eliDoc" value = "${documentos.eliminar}"/>
                                 <c:choose>
                                     <c:when test="${eliUser}">
                                         <c:set var = "msg" value = "Datos eliminados exitosamente"/>

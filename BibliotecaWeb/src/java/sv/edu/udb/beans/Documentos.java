@@ -138,7 +138,6 @@ public class Documentos {
             String query = "insert into Documentos values(DEFAULT,?,?,?,?,?,?)";
             Connection con = Conexion.getConnection();
             PreparedStatement stmt = con.prepareStatement(query);
-        
             stmt.setString(1, getEdicion());
             stmt.setInt(2, getIdImprenEdi());
             stmt.setString(3, getDescripcion());
@@ -177,7 +176,7 @@ public class Documentos {
     public boolean getEliminar(){
         try {
             String query = "delete from documentos where idDocumento=?";
-            
+            System.out.println(getIdDocumento());
             Connection con = Conexion.getConnection();
             PreparedStatement stmt = con.prepareStatement(query);
             stmt.setInt(1, getIdDocumento());
