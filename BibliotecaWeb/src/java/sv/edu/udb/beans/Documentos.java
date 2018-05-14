@@ -137,7 +137,6 @@ public class Documentos {
     public boolean getIngreso(){
         try {
             String query = "insert into Documentos values(DEFAULT,?,?,?,?,?,?)";
-
             Connection con = Conexion.getConnection();
             PreparedStatement stmt = con.prepareStatement(query);
             stmt.setString(1, getEdicion());
@@ -146,6 +145,7 @@ public class Documentos {
             stmt.setString(4, getNotas());
             stmt.setString(5, getTitulo());
             stmt.setInt(6, getIdIdioma());
+            
             return stmt.executeUpdate() > 0;
         } catch (SQLException e) {
             getLog().fatal("Error en sql - " + e.getMessage());
