@@ -9,10 +9,7 @@
 <%@ include file="conexion.jsp"%>
 <%
     HttpSession sesionUsuario = request.getSession();
-     if (sesionUsuario.getAttribute("tipo").equals(3)) {
-     }else{
-           response.sendRedirect("index.jsp");
- }
+    
 %>
 <!DOCTYPE html>
 <html lang="es">
