@@ -139,7 +139,7 @@ public class Documentos {
             String query = "insert into Documentos values(DEFAULT,?,?,?,?,?,?)";
             Connection con = Conexion.getConnection();
             PreparedStatement stmt = con.prepareStatement(query);
-          
+         
             stmt.setString(1, getEdicion());
             stmt.setInt(2, getIdImprenEdi());
             stmt.setString(3, getDescripcion());
