@@ -3,7 +3,14 @@
 <jsp:useBean id="documentos" class="sv.edu.udb.beans.Documentos"/> 
 <jsp:useBean id="editorial" class="sv.edu.udb.beans.Editorial"/>
 <jsp:useBean id="idioma" class="sv.edu.udb.beans.Idioma"/> 
+<%
+    HttpSession sesionUsuario = request.getSession();
+     if (sesionUsuario.getAttribute("tipo").equals(3)) {
+     }else{
+           response.sendRedirect("index.jsp");
 
+ }
+%>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -61,7 +68,7 @@
                                                 <c:when test="${!ingreso}">
                                                     <div class="alert alert-danger alert-dismissable">
                                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                                    Ha ocurrido in error al ingresar.</div>
+                                                    Ha ocurrido un error al ingresar.</div>
                                                 </c:when>
                                             </c:choose>
                                         </c:when>
@@ -138,7 +145,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        
             
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>

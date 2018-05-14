@@ -29,6 +29,10 @@
                 HttpSession sesionUsuario = request.getSession();
                 sesionUsuario.setAttribute("carnet", inicio.getCarnet()); 
                 sesionUsuario.setAttribute("mora", inicio.getMora());
+                sesionUsuario.setAttribute("nombre", inicio.getNombre());
+                sesionUsuario.setAttribute("correo", inicio.getCorreo());
+                sesionUsuario.setAttribute("telefono", inicio.getTelefono());
+                sesionUsuario.setAttribute("tipo", inicio.getTipo());
                 response.sendRedirect("index.jsp");
             %>
         </c:when>

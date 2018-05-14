@@ -8,6 +8,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="usuario" class="sv.edu.udb.beans.Usuario"/> 
 <jsp:useBean id="tipos" class="sv.edu.udb.beans.TipoUsuario"/> 
+<%
+    HttpSession sesionUsuario = request.getSession();
+    if (sesionUsuario.getAttribute("tipo").equals(3)) {
+     }else{
+           response.sendRedirect("index.jsp");
+
+ }
+%>
 <!DOCTYPE html>
 
 <jsp:setProperty name="usuario" property="carnet" param="id"/>

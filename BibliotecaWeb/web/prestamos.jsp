@@ -7,6 +7,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="prestamo" class="sv.edu.udb.beans.Prestamo"/> 
+<%
+    HttpSession sesionUsuario = request.getSession();
+   
+%>
 <!DOCTYPE html>
 <html lang="es">
 <head>
