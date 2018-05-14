@@ -11,7 +11,6 @@
     if (sesionUsuario.getAttribute("carnet").equals("")) {
             response.sendRedirect("login.jsp");
         }
-   
 %>
 <!DOCTYPE html>
 <html lang="es">

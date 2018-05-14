@@ -3,7 +3,6 @@
     Created on : 05-06-2018, 06:00:55 PM
     Author     : 
 --%>
-
 <%@page import="sv.edu.udb.beans.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>

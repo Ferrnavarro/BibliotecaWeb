@@ -8,7 +8,5 @@
 <%
     HttpSession sesionUsuario = request.getSession();
     sesionUsuario.invalidate();
-        response.sendRedirect("login.jsp");
-
-    
+        response.sendRedirect("login.jsp");   
 %>

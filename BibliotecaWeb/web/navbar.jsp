@@ -6,7 +6,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
  HttpSession sesionUsuario = request.getSession();
-  %>
+  
+%>
     <c:set var="exito" value="${tipo}" />
 
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">

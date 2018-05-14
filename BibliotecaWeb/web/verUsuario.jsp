@@ -13,7 +13,6 @@
     if (sesionUsuario.getAttribute("tipo").equals(3)) {
      }else{
            response.sendRedirect("index.jsp");
-
  }
 %>
 <!DOCTYPE html>

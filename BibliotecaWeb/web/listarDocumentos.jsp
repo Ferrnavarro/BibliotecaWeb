@@ -5,8 +5,7 @@
      if (sesionUsuario.getAttribute("tipo").equals(3)) {
      }else{
            response.sendRedirect("index.jsp");
-
- }
+     }
 %>
 <table class="table table-striped table-hover">
     <thead>

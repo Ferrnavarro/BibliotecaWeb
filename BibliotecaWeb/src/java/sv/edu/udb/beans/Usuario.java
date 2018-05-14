@@ -10,7 +10,6 @@ public class Usuario {
     public Usuario(String carnet){
         this.carnet = carnet;
     }
-
     public Usuario(String carnet, String nombre, String apellido, String correo, String telefono, String pass, int tipoUsuario){
         this.carnet = carnet;
         this.nombre = nombre;

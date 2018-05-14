@@ -9,7 +9,6 @@
 <jsp:useBean id="prestamo" class="sv.edu.udb.beans.Prestamo"/> 
 <%
     HttpSession sesionUsuario = request.getSession();
-   
 %>
 <!DOCTYPE html>
 <html lang="es">
