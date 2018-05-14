@@ -136,8 +136,8 @@ public class Documentos {
         
     public boolean getIngreso(){
         try {
-            String query = "insert into Documentos values(?,?,?,?,?,?)";
-            
+            String query = "insert into Documentos values(DEFAULT,?,?,?,?,?,?)";
+
             Connection con = Conexion.getConnection();
             PreparedStatement stmt = con.prepareStatement(query);
             stmt.setString(1, getEdicion());

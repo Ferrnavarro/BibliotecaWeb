@@ -88,7 +88,7 @@
                                             <label class="col-md-2 control-label">Imprenta Editorial: </label>
                                             <div class="col-md-10">
 
-                                                <select class="form-control" name="idEditorial" id="idEditorial">
+                                                <select class="form-control" name="idImprenEdi" id="idImprenEdi">
                                                 <c:forEach items="${editorial.editorial}" varStatus="status" var="edit">
                                                     <option value="${edit.idImprenEdi}">${edit.lugar}</option>
                                                 </c:forEach>
