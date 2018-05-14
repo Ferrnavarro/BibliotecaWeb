@@ -57,21 +57,21 @@
                             <a  class="btn btn-info btn-xs" href="nuevoUsuario.jsp">Nuevo <i class="fa fa-plus-circle"></i></a>
                         </h3>
                         
-                        <c:if test="${!empty param.eliminar}">
-                            <jsp:setProperty name="documentos" property="carnet" param="eliminar"/>
+                       <c:if test="${!empty param.eliminar}">
+                            <jsp:setProperty name="usuario" property="carnet" param="eliminar"/>
                             <c:set var = "existe" value = "${usuario.existe}"/>
                             <c:if test="${!existe}">
-                                <c:set var = "msg" value = "El usuario a eliminar no existe"/>
+                                <c:set var = "msg" value = "El Documento a eliminar no existe"/>
                                 <c:set var = "tipo" value = "danger"/>
                             </c:if>
                             <c:if test="${existe}">
-                                <c:set var = "eliUser" value = "${usuario.eliminar}"/>
+                                <c:set var = "eliDoc" value = "${usuario.eliminar}"/>
                                 <c:choose>
                                     <c:when test="${eliUser}">
                                         <c:set var = "msg" value = "Datos eliminados exitosamente"/>
                                         <c:set var = "tipo" value = "success"/>
                                     </c:when>
-                                    <c:when test="${!eliUser}">
+                                    <c:when test="${!eliDoc}">
                                         <c:set var = "msg" value = "Ha ocurrido in error al eliminar."/>
                                         <c:set var = "tipo" value = "danger"/>
                                     </c:when>

@@ -243,6 +243,7 @@ public class Usuario {
     
     public boolean getEliminar(){
         try {
+            //
             String query = "delete from usuarios where Carnet=?";
             
             Connection con = Conexion.getConnection();
