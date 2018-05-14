@@ -94,7 +94,7 @@
                                                 </select>
                                             </div>
                                         </div>
-                                            
+             
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Descripción: </label>
                                             <div class="col-md-10">
