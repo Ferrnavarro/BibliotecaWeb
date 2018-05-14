@@ -4,6 +4,13 @@
 <jsp:useBean id="documentos" class="sv.edu.udb.beans.Documentos"/> 
 <jsp:useBean id="editorial" class="sv.edu.udb.beans.Editorial"/>
 <jsp:useBean id="idioma" class="sv.edu.udb.beans.Idioma"/> 
+<%
+    HttpSession sesionUsuario = request.getSession();
+    if (sesionUsuario.getAttribute("tipo").equals(3)) {
+     }else{
+           response.sendRedirect("index.jsp");
+ }
+%>
 <!DOCTYPE html>
 
 <jsp:setProperty name="documentos" property="idDocumento" param="id"/>

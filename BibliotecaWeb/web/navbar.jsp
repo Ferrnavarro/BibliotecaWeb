@@ -3,6 +3,12 @@
     Created on : 04-22-2018, 11:42:28 AM
     Author     : 
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+ HttpSession sesionUsuario = request.getSession();
+  
+%>
+    <c:set var="exito" value="${tipo}" />
 
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
     <div class="navbar-header">
@@ -19,7 +25,7 @@
     <ul class="nav navbar-top-links navbar-right">
 
         <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">(Nombre usuario) 
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= sesionUsuario.getAttribute("carnet") %>
                 <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-user">
@@ -42,7 +48,8 @@
                 <li>
                     <a href="consulta.jsp"><i class="fa fa-search fa-fw"></i> Consulta</a>
                 </li>
-                <li>
+                <c:if test="${tipo==3}">
+                    <li>
                     <a href="#"><i class="fa fa-edit fa-fw"></i> Mantenimientos<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
@@ -68,6 +75,7 @@
                         </li>
                     </ul>
                 </li>
+                </c:if>                
                 <li>
                     <a href="prestamos.jsp"><i class="fa fa-book fa-fw"></i> Prestamos</a>
                 </li>

@@ -10,7 +10,6 @@ public class Usuario {
     public Usuario(String carnet){
         this.carnet = carnet;
     }
-
     public Usuario(String carnet, String nombre, String apellido, String correo, String telefono, String pass, int tipoUsuario){
         this.carnet = carnet;
         this.nombre = nombre;
@@ -31,6 +30,22 @@ public class Usuario {
     }
 
     public String getNombre() {
+        
+        try{
+            String query = "select carnet, nombre from usuarios where Carnet=?";
+            Connection con = Conexion.getConnection();
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setString(1, carnet);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.isBeforeFirst())
+                while (rs.next()){
+                    this.nombre = rs.getString(2);
+                } 
+        }
+        catch(Exception a){
+            
+        }
         return nombre;
     }
 
@@ -47,6 +62,21 @@ public class Usuario {
     }
 
     public String getCorreo() {
+         try{
+            String query = "select carnet, correo from usuarios where Carnet=?";
+            Connection con = Conexion.getConnection();
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setString(1, carnet);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.isBeforeFirst())
+                while (rs.next()){
+                    this.correo = rs.getString(2);
+                } 
+        }
+        catch(Exception a){
+            
+        }
         return correo;
     }
 
@@ -55,6 +85,21 @@ public class Usuario {
     }
 
     public String getTelefono() {
+         try{
+            String query = "select carnet, telefono from usuarios where Carnet=?";
+            Connection con = Conexion.getConnection();
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setString(1, carnet);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.isBeforeFirst())
+                while (rs.next()){
+                    this.telefono = rs.getString(2);
+                } 
+        }
+        catch(Exception a){
+            
+        }
         return telefono;
     }
 
@@ -71,6 +116,21 @@ public class Usuario {
     }
 
     public int getTipo() {
+         try{
+            String query = "select carnet, tipodeusuario from usuarios where Carnet=?";
+            Connection con = Conexion.getConnection();
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setString(1, carnet);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.isBeforeFirst())
+                while (rs.next()){
+                    this.tipoUsuario = rs.getInt(2);
+                } 
+        }
+        catch(Exception a){
+            
+        }
         return tipoUsuario;
     }
 
@@ -282,8 +342,8 @@ public class Usuario {
             stmt.setString(2, pass);
             
             ResultSet rs = stmt.executeQuery();
-            
             if (rs.isBeforeFirst()) {
+                
                 return  true;
             }
         } catch (SQLException e) {

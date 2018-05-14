@@ -12,6 +12,9 @@
 <jsp:setProperty name="alumno" property="id" value="1"/>
 <jsp:setProperty name="maestro" property="id" value="2"/>
 ${alumno.iniciar()} ${maestro.iniciar()}
+<%
+    HttpSession sesionUsuario = request.getSession();  
+%>
 <!DOCTYPE html>
 <html lang="es">
 <head>

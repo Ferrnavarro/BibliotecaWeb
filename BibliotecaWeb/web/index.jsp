@@ -8,6 +8,9 @@
 <%@page session="true"%>
 <%
     HttpSession sesionUsuario = request.getSession();
+    if (sesionUsuario.getAttribute("carnet").equals("")) {
+            response.sendRedirect("login.jsp");
+        }
 %>
 <!DOCTYPE html>
 <html lang="es">
@@ -51,9 +54,9 @@
                                 <h4>Datos personales</h4>
                                 <dl class="dl-horizontal">
                                     <dt>Carnet:</dt><dd><%= sesionUsuario.getAttribute("carnet") %></dd>
-                                    <dt>Nombre:</dt><dd>Don Bosco</dd>
-                                    <dt>Correo:</dt><dd>db@mail.com</dd>
-                                    <dt>Teléfono:</dt><dd>22222222</dd>
+                                    <dt>Nombre:</dt><dd><%= sesionUsuario.getAttribute("nombre") %></dd>
+                                    <dt>Correo:</dt><dd><%= sesionUsuario.getAttribute("correo") %></dd>
+                                    <dt>Teléfono:</dt><dd><%= sesionUsuario.getAttribute("telefono") %></dd>
                                 </dl>
                                 
                                 <h4>Prestamos actuales</h4>

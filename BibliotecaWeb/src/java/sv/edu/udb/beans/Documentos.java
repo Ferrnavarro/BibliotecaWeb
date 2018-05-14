@@ -14,7 +14,6 @@ public class Documentos {
         log = aLog;
     }
 
-    
     public Documentos(){ }
     
     public Documentos(int idDocumento){

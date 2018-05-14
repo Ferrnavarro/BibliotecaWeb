@@ -1,5 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:useBean id="usuarios" class="sv.edu.udb.beans.Usuario"/>
+<%
+    HttpSession sesionUsuario = request.getSession();
+     if (sesionUsuario.getAttribute("tipo").equals(3)) {
+     }else{
+           response.sendRedirect("index.jsp");
+ }
+%>
 <table class="table table-striped table-hover">
     <thead>
         <tr>

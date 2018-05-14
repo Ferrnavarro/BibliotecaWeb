@@ -8,7 +8,13 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="tipos" class="sv.edu.udb.beans.TipoUsuario"/> 
 <jsp:useBean id="usuario" class="sv.edu.udb.beans.Usuario"/> 
-
+<%
+    HttpSession sesionUsuario = request.getSession();
+    if (sesionUsuario.getAttribute("tipo").equals(3)) {
+     }else{
+           response.sendRedirect("index.jsp");
+ }
+%>
 <!DOCTYPE html>
 <html lang="es">
 <head>

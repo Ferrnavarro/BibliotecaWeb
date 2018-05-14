@@ -3,10 +3,13 @@
     Created on : 04-22-2018, 11:48:40 AM
     Author     :
 --%>
-
+<%
+ HttpSession sesionUsuario = request.getSession();
+   %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
+    
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
