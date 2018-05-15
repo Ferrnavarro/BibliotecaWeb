@@ -55,12 +55,20 @@ public class Libros {
     private int iddocumento;
     private int idlibro;
     private String isbn;
+    private String titulo;
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
     
-    
-    public Libros (int idlibro,int iddocumento,  String isbn){
+    public Libros (int idlibro,int iddocumento,  String isbn, String titulo){
         this.idlibro = idlibro;
                 this.iddocumento = iddocumento;
-
+        this.titulo = titulo;
         this.isbn = isbn;
     }
      public int retornariddoc(int idr){
@@ -97,14 +105,14 @@ public class Libros {
         ArrayList<Libros> lista = new ArrayList();
         
         try {
-            String query = "select * from libro";
+            String query = "SELECT documentos.Titulo as titulo, libro.ISBN as isbn, documentos.iddocumento as id, libro.idlibro as idl from documentos INNER JOIN libro on documentos.idDocumento=libro.idDocumento";
             Connection con = Conexion.getConnection();
             PreparedStatement stmt = con.prepareStatement(query);
             ResultSet rs = stmt.executeQuery();
 
             if (rs.isBeforeFirst())
                 while (rs.next()){
-                    lista.add(new Libros(rs.getInt(1),rs.getInt(2),rs.getString(3)));
+                    lista.add(new Libros(rs.getInt("idl"),rs.getInt("id"),rs.getString("titulo"),rs.getString("isbn")));
                     
                 }
             

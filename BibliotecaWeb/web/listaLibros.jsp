@@ -18,6 +18,7 @@
         <tr>
             <th>ID Documento</th>
             <th>ID Libro</th>
+            <th>Titulo</th>
             <th>ISBN</th>
         </tr>
     </thead>
@@ -28,6 +29,7 @@
                 <td>${doc.iddocumento}</td>
                 <td>${doc.idlibro}</td>
                 <td>${doc.isbn}</td>
+                <td>${doc.titulo}</td>
                 
                 
                 <td><a class="btn btn-default btn-circle" href="verLibro.jsp?id=${doc.idlibro}"><i class="fa fa-edit"></i></a>

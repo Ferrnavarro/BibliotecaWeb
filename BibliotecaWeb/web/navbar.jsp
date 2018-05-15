@@ -58,6 +58,9 @@
                         <li>
                             <a href="tipo.jsp">Tipo de usuario</a>
                         </li>
+                         <li>
+                            <a href="ejemplar.jsp">Ejemplar</a>
+                        </li>
                         <li>
                             <a href="documentos.jsp">Documentos</a>
                         </li>
