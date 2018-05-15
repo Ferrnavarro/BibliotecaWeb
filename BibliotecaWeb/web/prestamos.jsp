@@ -9,6 +9,10 @@
 <jsp:useBean id="prestamo" class="sv.edu.udb.beans.Prestamo"/> 
 <%
     HttpSession sesionUsuario = request.getSession();
+     if (sesionUsuario.getAttribute("tipo").equals(3)) {
+     }else{
+           response.sendRedirect("index.jsp");
+     }
 %>
 <!DOCTYPE html>
 <html lang="es">
@@ -82,14 +86,11 @@
                                                     <c:otherwise>
                                                         <c:set var = "realizado" value = "${prestamo.ingresarPrestamo}"/>
                                                         <c:choose>
-                                                            <c:when test="${realizado}">
+                                                            <c:when test="${!realizado}">
                                                                 <c:set var = "msg" value = "Prestamo ingresado exitosamente"/>
                                                                 <c:set var = "tipo" value = "success"/>
                                                             </c:when>
-                                                            <c:otherwise>
-                                                                <c:set var = "msg" value = "Error al ingresar prestamo"/>
-                                                                <c:set var = "tipo" value = "danger"/>
-                                                            </c:otherwise>
+                                                            
                                                         </c:choose>
                                                     </c:otherwise>
                                                 </c:choose>

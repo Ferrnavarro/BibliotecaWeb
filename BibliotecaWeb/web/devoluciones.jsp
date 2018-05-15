@@ -4,9 +4,12 @@
     Author     : 
 --%>
 <%
- HttpSession sesionUsuario = request.getSession();
- 
- %>
+    HttpSession sesionUsuario = request.getSession();
+     if (sesionUsuario.getAttribute("tipo").equals(3)) {
+     }else{
+           response.sendRedirect("index.jsp");
+     }
+%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="devolucion" class="sv.edu.udb.beans.Prestamo"/> 
@@ -57,14 +60,11 @@
                                     <c:when test="${existe}">
                                         <c:set var="devuelto" value="${devolucion.devolver}"/>
                                         <c:choose>
-                                            <c:when test="${devuelto}">
+                                            <c:when test="${!devuelto}">
                                                 <c:set var = "msg" value = "Ejemplar devuelto exitosamente"/>
                                                 <c:set var = "tipo" value = "success"/>
                                             </c:when>
-                                            <c:otherwise>
-                                                <c:set var = "msg" value = "Hubo un error al devolver"/>
-                                                <c:set var = "tipo" value = "danger"/>
-                                            </c:otherwise>
+                                            
                                         </c:choose>
                                     </c:when>
                                     <c:when test="${!existe}">

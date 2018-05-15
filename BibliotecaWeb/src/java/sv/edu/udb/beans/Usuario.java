@@ -148,7 +148,76 @@ public class Usuario {
     private String pass;
     private int tipoUsuario;
     private int prestamosActivos;
+
+    public int getIdprestamo() {
+        return idprestamo;
+    }
+
+    public void setIdprestamo(int idprestamo) {
         
+        this.idprestamo = idprestamo;
+    }
+
+    public Date getInicio() {
+        try{
+            String query = "select idusuario, fecha from prestamos where idusuario=?";
+            Connection con = Conexion.getConnection();
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setString(1, carnet);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.isBeforeFirst())
+                while (rs.next()){
+                    this.inicio = rs.getDate(2);
+                } 
+        }
+        catch(Exception a){
+            
+        }
+        return inicio;
+    }
+
+    public void setInicio(Date inicio) {
+        this.inicio = inicio;
+    }
+
+    public Date getFin() {
+         try{
+            String query = "select idusuario, fechadevolucion from prestamos where idusuario=?";
+            Connection con = Conexion.getConnection();
+            PreparedStatement stmt = con.prepareStatement(query);
+            stmt.setString(1, carnet);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.isBeforeFirst())
+                while (rs.next()){
+                    this.fin = rs.getDate(2);
+                    
+                } 
+        }
+        catch(Exception a){
+            
+        }
+        return fin;
+    }
+
+    public void setFin(Date fin) {
+        this.fin = fin;
+    }
+    private int estado;
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+    
+    private int idprestamo;
+    private Date inicio;
+    private Date fin;
+    
     public String getNombreComp(){
         return getNombre() + " " + getApellido();
     }
@@ -257,6 +326,7 @@ public class Usuario {
         return false;
     }
     
+    
     public boolean getExiste(){
         try {
             String query = "select * from usuarios where Carnet = ?";
@@ -335,8 +405,8 @@ public class Usuario {
     public boolean getSesion(){
         
         try {
-            String query = "SELECT * FROM usuarios WHERE Carnet=? AND Pass=?";
-            
+            String query = "select prestamos.IdPrestamo, prestamos.IdUsuario, usuarios.Carnet as carnet, usuarios.pass as pass, prestamos.Fecha as inicio, prestamos.FechaDevolucion as fin, COUNT(prestamos.Estado) as estado from prestamos INNER JOIN usuarios ON prestamos.IdUsuario=usuarios.Carnet WHERE carnet=? AND pass=?";
+             
             Connection con = Conexion.getConnection();
             PreparedStatement stmt = con.prepareStatement(query);
             stmt.setString(1, carnet);

@@ -78,13 +78,16 @@
                         </li>
                     </ul>
                 </li>
-                </c:if>                
+                </c:if>   
+                                <c:if test="${tipo==3}">
+
                 <li>
                     <a href="prestamos.jsp"><i class="fa fa-book fa-fw"></i> Prestamos</a>
                 </li>
                 <li>
                     <a href="devoluciones.jsp"><i class="fa fa-clipboard fa-fw"></i> Devoluciones</a>
                 </li>
+                                </c:if>
                 <li>
                     <a href="estadisticas.jsp"><i class="fa fa-bar-chart-o fa-fw"></i> Estadísticas</a>
                 </li>

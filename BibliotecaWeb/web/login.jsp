@@ -32,6 +32,9 @@
                 sesionUsuario.setAttribute("correo", inicio.getCorreo());
                 sesionUsuario.setAttribute("telefono", inicio.getTelefono());
                 sesionUsuario.setAttribute("tipo", inicio.getTipo());
+                sesionUsuario.setAttribute("inicio", inicio.getInicio());
+                sesionUsuario.setAttribute("fin", inicio.getFin());
+                sesionUsuario.setAttribute("estado", inicio.getEstado());
                 response.sendRedirect("index.jsp");
             %>
         </c:when>

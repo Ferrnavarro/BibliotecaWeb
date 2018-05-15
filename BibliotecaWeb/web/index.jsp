@@ -6,6 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page session="true"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%
     HttpSession sesionUsuario = request.getSession();
     if (sesionUsuario.getAttribute("carnet").equals("")) {
@@ -60,6 +62,16 @@
                                 </dl>
                                 
                                 <h4>Prestamos actuales</h4>
+                                    <dl class="dl-horizontal">
+                                                                        <c:if test="${estado==0}">
+                                                                            <dt>No posee prestamos pendientes.</dt>
+                                                                        </c:if>
+                                                                        <c:if test="${estado>=1}">
+                                    <dt>Fecha Inicial: </dt><dd><%= sesionUsuario.getAttribute("inicio") %></dd>
+                                    <dt>Fecha Devolucion </dt><dd><%= sesionUsuario.getAttribute("fin") %></dd>
+                                                                        </c:if>
+                                    
+                                </dl>                               
                             </div>
                         </div>
                     </div>
