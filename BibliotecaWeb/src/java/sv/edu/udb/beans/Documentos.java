@@ -23,6 +23,30 @@ public class Documentos {
     private static Logger log = Logger.getLogger(Documentos.class);
     
     private int iddocumento;
+
+    public int getIddocumento() {
+        return iddocumento;
+    }
+
+    public void setIddocumento(int iddocumento) {
+        this.iddocumento = iddocumento;
+    }
+
+    public int getIdimprenedi() {
+        return idimprenedi;
+    }
+
+    public void setIdimprenedi(int idimprenedi) {
+        this.idimprenedi = idimprenedi;
+    }
+
+    public int getIdidioma() {
+        return ididioma;
+    }
+
+    public void setIdidioma(int ididioma) {
+        this.ididioma = ididioma;
+    }
     private String edicion;
     private int idimprenedi;
     private String descripcion;
@@ -33,6 +57,7 @@ public class Documentos {
     public int getIdDocumento() {
         return iddocumento;
     }
+  
 
     public void setIdDocumento(int IdDocumento) {
         this.iddocumento = IdDocumento;
