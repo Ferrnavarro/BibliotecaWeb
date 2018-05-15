@@ -71,7 +71,7 @@
                             <a href="revistas.jsp">Revistas</a>
                         </li>
                         <li>
-                            <a href="dvds.jsp">DVDs</a>
+                            <a href="dvd.jsp">DVDs</a>
                         </li>
                         <li>
                             <a href="tesis.jsp">Tesis</a>
